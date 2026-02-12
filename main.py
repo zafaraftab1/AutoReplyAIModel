@@ -30,6 +30,10 @@ class ChatRequest(BaseModel):
 def home():
     return {"message": "Gemini Chat Backend Running ✅"}
 
+@app.get("/hello/{name}")
+def hello(name: str):
+    return {"message": f"Hello {name}"}
+
 @app.post("/chat")
 def chat(req: ChatRequest):
     try:
